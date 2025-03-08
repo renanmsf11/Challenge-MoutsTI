@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-08T00:25:55.287890" rpa="false" schemaversion="5">
+<suite id="s1" name="Test01" source="C:\Users\Marquez\Documents\robotFramework-MoutsIt\test01.robot">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary" type="SETUP">
+<arg>${EXECDIR}/results/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-08T00:25:55.533599" elapsed="0.000458"/>
+</kw>
+<test id="s1-t1" name="Case Login with valid credentials in Serverest web application" line="7">
+<kw name="Given the user is at login page" owner="resource01">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:25:55.535211" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T00:25:55.534996" elapsed="6.139095"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:25:55.534738" elapsed="6.139540"/>
+</kw>
+<kw name="When the user types valid username credential" owner="resource01">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:26:01.675898" level="INFO">Typing text 'testing_qa@gmail.com' into text field 'id:email'.</msg>
+<arg>locator=id:email</arg>
+<arg>text=testing_qa@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T00:26:01.675230" elapsed="0.220999"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:01.674809" elapsed="0.221712"/>
+</kw>
+<kw name="And the user types valid password credential" owner="resource01">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:26:01.898393" level="INFO">Typing text 'test@123' into text field 'id:password'.</msg>
+<arg>locator=id:password</arg>
+<arg>text=test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T00:26:01.897809" elapsed="0.101701"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:01.897156" elapsed="0.102533"/>
+</kw>
+<kw name="And the user click in the &quot;Entrar&quot; button" owner="resource01">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:26:02.000785" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>locator=Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T00:26:02.000513" elapsed="0.070621"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:02.000128" elapsed="0.071144"/>
+</kw>
+<kw name="Then the user is redirected to the Store page" owner="resource01">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Serverest Store</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T00:26:02.072173" elapsed="1.051286"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:02.071763" elapsed="1.051801"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:25:55.534228" elapsed="7.589560"/>
+</test>
+<test id="s1-t2" name="Case Creating new Account in Serverest web application" line="15">
+<kw name="Given the user is at login page" owner="resource01">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:26:03.125168" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T00:26:03.124995" elapsed="7.230238"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:03.124722" elapsed="7.230660"/>
+</kw>
+<kw name="When the user click in the &quot;Cadastre-se&quot; button" owner="resource01">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:26:10.356220" level="INFO">Clicking element 'xpath=//a[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//a[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T00:26:10.356016" elapsed="0.187434"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:10.355726" elapsed="0.187893"/>
+</kw>
+<kw name="And the user types valid name credential" owner="resource01">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T00:26:10.544807" level="INFO">Typing text 'testing qa' into text field 'id:nome'.</msg>
+<arg>locator=id:nome</arg>
+<arg>text=testing qa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T00:26:10.544490" elapsed="0.101673"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:10.544056" elapsed="0.102238"/>
+</kw>
+<status status="PASS" start="2025-03-08T00:26:03.124288" elapsed="7.522309"/>
+</test>
+<doc>TestesE2E-MoutsTI</doc>
+<status status="PASS" start="2025-03-08T00:25:55.289203" elapsed="15.358061"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test01" id="s1" pass="2" fail="0" skip="0">Test01</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-08T00:25:55.323474" level="ERROR">Error in file 'C:\Users\Marquez\Documents\robotFramework-MoutsIt\resource01.robot' on line 3: Setting 'Suite Setup' is not allowed in resource file.</msg>
+</errors>
+</robot>

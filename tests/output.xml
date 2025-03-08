@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-08T17:25:10.606054" rpa="false" schemaversion="5">
+<suite id="s1" name="StorePage-Serverest &amp; LoginPage-Serverest &amp; Api-testing-products">
+<suite id="s1-s1" name="StorePage-Serverest" source="C:\Users\Marquez\Documents\robotFramework-MoutsIt\tests\StorePage-Serverest.robot">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary" type="SETUP">
+<arg>${EXECDIR}/results/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-08T17:25:10.846858" elapsed="0.000487"/>
+</kw>
+<test id="s1-s1-t1" name="Case 01: Filtering by product through search bar in Serverest web application" line="10">
+<kw name="Given the user is at login page" owner="LoginPage-Serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:10.848531" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T17:25:10.848344" elapsed="6.226074"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:10.848079" elapsed="6.226503"/>
+</kw>
+<kw name="When the user click in the &quot;Cadastre-se&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:17.076269" level="INFO">Clicking element 'xpath=//a[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//a[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.075723" elapsed="0.180663"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:17.075073" elapsed="0.181444"/>
+</kw>
+<kw name="And the user types valid name credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:17.257255" level="INFO">Typing text 'testing qa' into text field 'id:nome'.</msg>
+<arg>locator=id:nome</arg>
+<arg>text=testing qa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.257067" elapsed="0.074672"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:17.256820" elapsed="0.075030"/>
+</kw>
+<kw name="And the user types valid new email credential" owner="LoginPage-Serverest">
+<kw name="Support: Generate random email" owner="LoginPage-Serverest">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-08T17:25:17.333466" level="INFO">${RANDOM} = 9869</msg>
+<var>${RANDOM}</var>
+<arg>random.randint(1, 10000)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.333175" elapsed="0.000320"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:25:17.333749" level="INFO">${NEW_EMAIL} = testing_qa_9869@teste.com</msg>
+<var>${NEW_EMAIL}</var>
+<arg>testing_qa_${RANDOM}@teste.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.333602" elapsed="0.000167"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:25:17.334091" level="INFO">${NEW_EMAIL} = testing_qa_9869@teste.com</msg>
+<arg>${NEW_EMAIL}</arg>
+<arg>${NEW_EMAIL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.333862" elapsed="0.000286"/>
+</kw>
+<return>
+<value>${NEW_EMAIL}</value>
+<status status="PASS" start="2025-03-08T17:25:17.334228" elapsed="0.000080"/>
+</return>
+<msg time="2025-03-08T17:25:17.334430" level="INFO">${NEW_EMAIL} = testing_qa_9869@teste.com</msg>
+<var>${NEW_EMAIL}</var>
+<status status="PASS" start="2025-03-08T17:25:17.332556" elapsed="0.001897"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:17.334737" level="INFO">Typing text 'testing_qa_9869@teste.com' into text field 'id:email'.</msg>
+<arg>locator=id:email</arg>
+<arg>text=${NEW_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.334544" elapsed="0.082083"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:17.332223" elapsed="0.084520"/>
+</kw>
+<kw name="And the user types valid password credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:17.417569" level="INFO">Typing text 'test@123' into text field 'id:password'.</msg>
+<arg>locator=id:password</arg>
+<arg>text=test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.417384" elapsed="0.064653"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:17.417106" elapsed="0.065051"/>
+</kw>
+<kw name="And the user click in the &quot;Cadastrar&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:17.483073" level="INFO">Clicking element 'xpath=//button[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//button[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.482922" elapsed="0.047137"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:17.482634" elapsed="0.047550"/>
+</kw>
+<kw name="Then the system should display a feedback message indicating that the account has been successfully created" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Cadastro realizado com sucesso</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:25:17.530686" elapsed="0.624143"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:17.530466" elapsed="0.624473"/>
+</kw>
+<kw name="When the user types in the searchbar in Store page" owner="StorePage-Serverest">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T17:25:23.155900" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T17:25:18.155444" elapsed="5.000602"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:23.156453" level="INFO">Typing text 'Logi' into text field 'xpath=//input[@data-testid='pesquisar']'.</msg>
+<arg>xpath=//input[@data-testid='pesquisar']</arg>
+<arg>text=Logi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:23.156236" elapsed="0.048353"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:18.155230" elapsed="5.049477"/>
+</kw>
+<kw name="And the user clicks in the &quot;Pesquisar&quot; button in Store page" owner="StorePage-Serverest">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:23.205497" level="INFO">Clicking button 'xpath=//button[@data-testid='botaoPesquisar']'.</msg>
+<arg>xpath=//button[@data-testid='botaoPesquisar']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:23.205314" elapsed="0.057914"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:23.205059" elapsed="0.058276"/>
+</kw>
+<kw name="Then the system must return products accordingly to the search" owner="StorePage-Serverest">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T17:25:25.264570" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T17:25:23.264228" elapsed="2.000469"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//div[contains(@class, 'card-body')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:25:25.264865" elapsed="0.008838"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:25.288745" level="INFO">Element '//div[contains(@class, 'card-body')]' contains text 'Logi'.</msg>
+<arg>//div[contains(@class, 'card-body')]</arg>
+<arg>Logi</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-03-08T17:25:25.274070" elapsed="0.014775"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:23.263931" elapsed="2.025006"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:10.847507" elapsed="14.441647"/>
+</test>
+<test id="s1-s1-t2" name="Case 02: Adding product to Shoplist in Serverest web application" line="23">
+<kw name="Given the user is at login page" owner="LoginPage-Serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:25.290289" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T17:25:25.290128" elapsed="5.904106"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:25.289918" elapsed="5.904441"/>
+</kw>
+<kw name="When the user click in the &quot;Cadastre-se&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:31.195076" level="INFO">Clicking element 'xpath=//a[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//a[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.194931" elapsed="0.187032"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:31.194690" elapsed="0.187406"/>
+</kw>
+<kw name="And the user types valid name credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:31.382959" level="INFO">Typing text 'testing qa' into text field 'id:nome'.</msg>
+<arg>locator=id:nome</arg>
+<arg>text=testing qa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.382778" elapsed="0.075973"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:31.382491" elapsed="0.076396"/>
+</kw>
+<kw name="And the user types valid new email credential" owner="LoginPage-Serverest">
+<kw name="Support: Generate random email" owner="LoginPage-Serverest">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-08T17:25:31.459867" level="INFO">${RANDOM} = 7914</msg>
+<var>${RANDOM}</var>
+<arg>random.randint(1, 10000)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.459633" elapsed="0.000266"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:25:31.460115" level="INFO">${NEW_EMAIL} = testing_qa_7914@teste.com</msg>
+<var>${NEW_EMAIL}</var>
+<arg>testing_qa_${RANDOM}@teste.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.459998" elapsed="0.000136"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:25:31.460368" level="INFO">${NEW_EMAIL} = testing_qa_7914@teste.com</msg>
+<arg>${NEW_EMAIL}</arg>
+<arg>${NEW_EMAIL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.460216" elapsed="0.000183"/>
+</kw>
+<return>
+<value>${NEW_EMAIL}</value>
+<status status="PASS" start="2025-03-08T17:25:31.460442" elapsed="0.000056"/>
+</return>
+<msg time="2025-03-08T17:25:31.460591" level="INFO">${NEW_EMAIL} = testing_qa_7914@teste.com</msg>
+<var>${NEW_EMAIL}</var>
+<status status="PASS" start="2025-03-08T17:25:31.459480" elapsed="0.001130"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:31.460835" level="INFO">Typing text 'testing_qa_7914@teste.com' into text field 'id:email'.</msg>
+<arg>locator=id:email</arg>
+<arg>text=${NEW_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.460678" elapsed="0.073510"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:31.459220" elapsed="0.075087"/>
+</kw>
+<kw name="And the user types valid password credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:31.535204" level="INFO">Typing text 'test@123' into text field 'id:password'.</msg>
+<arg>locator=id:password</arg>
+<arg>text=test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.535020" elapsed="0.059401"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:31.534682" elapsed="0.059854"/>
+</kw>
+<kw name="And the user click in the &quot;Cadastrar&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:31.595192" level="INFO">Clicking element 'xpath=//button[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//button[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.595047" elapsed="0.049392"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:31.594827" elapsed="0.049733"/>
+</kw>
+<kw name="Then the system should display a feedback message indicating that the account has been successfully created" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Cadastro realizado com sucesso</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:25:31.645138" elapsed="0.627923"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:31.644887" elapsed="0.628309"/>
+</kw>
+<kw name="When the user types in the searchbar in Store page" owner="StorePage-Serverest">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T17:25:37.274379" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T17:25:32.273711" elapsed="5.000842"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:37.275166" level="INFO">Typing text 'Logi' into text field 'xpath=//input[@data-testid='pesquisar']'.</msg>
+<arg>xpath=//input[@data-testid='pesquisar']</arg>
+<arg>text=Logi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:37.274879" elapsed="0.055340"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:32.273487" elapsed="5.056840"/>
+</kw>
+<kw name="And the user clicks in the &quot;Pesquisar&quot; button in Store page" owner="StorePage-Serverest">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:37.331142" level="INFO">Clicking button 'xpath=//button[@data-testid='botaoPesquisar']'.</msg>
+<arg>xpath=//button[@data-testid='botaoPesquisar']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:37.330981" elapsed="0.078398"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:37.330712" elapsed="0.078813"/>
+</kw>
+<kw name="When the user click in &quot;Adicionar a lista&quot; for an avaiable product in Store page" owner="StorePage-Serverest">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T17:25:40.411160" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T17:25:37.410461" elapsed="3.000851"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:40.411706" level="INFO">Clicking element 'xpath=//button[text()='Adicionar a lista']'.</msg>
+<arg>xpath=//button[text()='Adicionar a lista']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:40.411499" elapsed="0.079767"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-08T17:25:43.492285" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-08T17:25:40.491665" elapsed="3.000799"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:37.410210" elapsed="6.082379"/>
+</kw>
+<kw name="Then the user is redirected to the Shoplist page" owner="StorePage-Serverest">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:43.507862" level="INFO">Element 'xpath=//h1[text()='Lista de Compras']' is displayed.</msg>
+<arg>xpath=//h1[text()='Lista de Compras']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-08T17:25:43.493218" elapsed="0.014742"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:43.492977" elapsed="0.015071"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:25.289524" elapsed="18.218784"/>
+</test>
+<doc>TestesE2E-MoutsTI</doc>
+<status status="PASS" start="2025-03-08T17:25:10.632667" elapsed="32.876290"/>
+</suite>
+<suite id="s1-s2" name="LoginPage-Serverest" source="C:\Users\Marquez\Documents\robotFramework-MoutsIt\tests\LoginPage-Serverest.robot">
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary" type="SETUP">
+<arg>${EXECDIR}/results/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-08T17:25:43.513421" elapsed="0.000251"/>
+</kw>
+<test id="s1-s2-t1" name="Case 01: Creating new Account in Serverest web application" line="9">
+<kw name="Given the user is at login page" owner="LoginPage-Serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:43.514432" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T17:25:43.514296" elapsed="6.140227"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:43.514106" elapsed="6.140570"/>
+</kw>
+<kw name="When the user click in the &quot;Cadastre-se&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:49.655821" level="INFO">Clicking element 'xpath=//a[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//a[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:49.655554" elapsed="0.183649"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:49.655110" elapsed="0.184278"/>
+</kw>
+<kw name="And the user types valid name credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:49.840411" level="INFO">Typing text 'testing qa' into text field 'id:nome'.</msg>
+<arg>locator=id:nome</arg>
+<arg>text=testing qa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:49.840140" elapsed="0.092734"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:49.839876" elapsed="0.093129"/>
+</kw>
+<kw name="And the user types valid new email credential" owner="LoginPage-Serverest">
+<kw name="Support: Generate random email" owner="LoginPage-Serverest">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-08T17:25:49.934180" level="INFO">${RANDOM} = 4901</msg>
+<var>${RANDOM}</var>
+<arg>random.randint(1, 10000)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-08T17:25:49.933866" elapsed="0.000353"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:25:49.934534" level="INFO">${NEW_EMAIL} = testing_qa_4901@teste.com</msg>
+<var>${NEW_EMAIL}</var>
+<arg>testing_qa_${RANDOM}@teste.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T17:25:49.934362" elapsed="0.000193"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:25:49.934817" level="INFO">${NEW_EMAIL} = testing_qa_4901@teste.com</msg>
+<arg>${NEW_EMAIL}</arg>
+<arg>${NEW_EMAIL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-03-08T17:25:49.934647" elapsed="0.000212"/>
+</kw>
+<return>
+<value>${NEW_EMAIL}</value>
+<status status="PASS" start="2025-03-08T17:25:49.934909" elapsed="0.000061"/>
+</return>
+<msg time="2025-03-08T17:25:49.935075" level="INFO">${NEW_EMAIL} = testing_qa_4901@teste.com</msg>
+<var>${NEW_EMAIL}</var>
+<status status="PASS" start="2025-03-08T17:25:49.933702" elapsed="0.001394"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:49.935838" level="INFO">Typing text 'testing_qa_4901@teste.com' into text field 'id:email'.</msg>
+<arg>locator=id:email</arg>
+<arg>text=${NEW_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:49.935178" elapsed="0.084464"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:49.933396" elapsed="0.086370"/>
+</kw>
+<kw name="And the user types valid password credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:50.020725" level="INFO">Typing text 'test@123' into text field 'id:password'.</msg>
+<arg>locator=id:password</arg>
+<arg>text=test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:50.020556" elapsed="0.061365"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:50.020247" elapsed="0.061793"/>
+</kw>
+<kw name="And the user click in the &quot;Cadastrar&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:50.082786" level="INFO">Clicking element 'xpath=//button[@data-testid='cadastrar']'.</msg>
+<arg>xpath=//button[@data-testid='cadastrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:50.082625" elapsed="0.048714"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:50.082382" elapsed="0.049078"/>
+</kw>
+<kw name="Then the system should display a feedback message indicating that the account has been successfully created" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Cadastro realizado com sucesso</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:25:50.131960" elapsed="0.624347"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:50.131733" elapsed="0.624695"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:43.513762" elapsed="7.242916"/>
+</test>
+<test id="s1-s2-t2" name="Case 02: Login with valid credentials in Serverest web application" line="18">
+<kw name="Given the user is at login page" owner="LoginPage-Serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:50.757791" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T17:25:50.757628" elapsed="7.317472"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:50.757419" elapsed="7.317895"/>
+</kw>
+<kw name="When the user types valid email credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:58.076523" level="INFO">Typing text 'testing_qa_4901@teste.com' into text field 'id:email'.</msg>
+<arg>locator=id:email</arg>
+<arg>text=${NEW_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:58.076190" elapsed="0.258491"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:58.075772" elapsed="0.259211"/>
+</kw>
+<kw name="And the user types valid password credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:58.336041" level="INFO">Typing text 'test@123' into text field 'id:password'.</msg>
+<arg>locator=id:password</arg>
+<arg>text=test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:58.335781" elapsed="0.076700"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:58.335408" elapsed="0.077272"/>
+</kw>
+<kw name="And the user click in the &quot;Entrar&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:58.413996" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>locator=Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:25:58.413729" elapsed="0.074409"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:58.413260" elapsed="0.075007"/>
+</kw>
+<kw name="Then the user is redirected to the Store page" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Serverest Store</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:25:58.488957" elapsed="1.247984"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:58.488671" elapsed="1.248405"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:50.757062" elapsed="8.980252"/>
+</test>
+<test id="s1-s2-t3" name="Case 03: Validate that the system does not accept user login with invalid email credential in the Serverest web application" line="25">
+<kw name="Given the user is at login page" owner="LoginPage-Serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:25:59.739047" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T17:25:59.738786" elapsed="6.388131"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:59.738433" elapsed="6.388620"/>
+</kw>
+<kw name="When the user types invalid email credential" owner="LoginPage-Serverest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:26:06.127923" level="INFO">Typing text 'invalidemail@invalid' into text field 'id:email'.</msg>
+<arg>locator=id:email</arg>
+<arg>text=invalidemail@invalid</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:26:06.127735" elapsed="0.240918"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:06.127445" elapsed="0.241480"/>
+</kw>
+<kw name="And the user click in the &quot;Entrar&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:26:06.370240" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>locator=Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:26:06.369970" elapsed="0.088093"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:06.369540" elapsed="0.088675"/>
+</kw>
+<kw name="Then the system should display a feedback message indicating that the Email must be valid" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Email deve ser um email válido</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:26:06.459171" elapsed="0.677706"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:06.458711" elapsed="0.678284"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:25:59.737874" elapsed="7.399390"/>
+</test>
+<test id="s1-s2-t4" name="Case 04: Validate that the system does not accept user login with blank input credentials in the Serverest web application" line="31">
+<kw name="Given the user is at login page" owner="LoginPage-Serverest">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:26:07.138547" level="INFO">Opening browser 'chrome' to base url 'https://front.serverest.dev/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-08T17:26:07.138352" elapsed="6.978293"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:07.138099" elapsed="6.978712"/>
+</kw>
+<kw name="And the user click in the &quot;Entrar&quot; button" owner="LoginPage-Serverest">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-08T17:26:14.118029" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>locator=Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-08T17:26:14.117786" elapsed="0.326885"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:14.117434" elapsed="0.327399"/>
+</kw>
+<kw name="Then the system should display a feedback message indicating that the Email is mandatory" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Email é obrigatório</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:26:14.445677" elapsed="1.140384"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:14.445287" elapsed="1.140890"/>
+</kw>
+<kw name="Then the system should display a feedback message indicating that the Password is mandatory" owner="LoginPage-Serverest">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Password é obrigatório</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-08T17:26:15.586751" elapsed="0.010405"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:15.586509" elapsed="0.010782"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:07.137666" elapsed="8.459833"/>
+</test>
+<doc>TestesE2E-MoutsTI</doc>
+<status status="PASS" start="2025-03-08T17:25:43.509882" elapsed="32.088119"/>
+</suite>
+<suite id="s1-s3" name="Api-testing-products" source="C:\Users\Marquez\Documents\robotFramework-MoutsIt\tests\Api-testing-products.robot">
+<test id="s1-s3-t1" name="Test API Post User - code 201" line="15">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-03-08T17:26:15.876716" level="INFO">${random_number} = 78786</msg>
+<var>${random_number}</var>
+<arg>5</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-03-08T17:26:15.876489" elapsed="0.000253"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-08T17:26:15.877059" level="INFO">${email} = testeqa78786@qa.com</msg>
+<var>${email}</var>
+<arg>testeqa${random_number}@qa.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-08T17:26:15.876925" elapsed="0.000153"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-03-08T17:26:15.877410" level="INFO">&amp;{NEW_USER_DATA} = { nome=teste | email=testeqa78786@qa.com | password=teste | administrador=true }</msg>
+<var>&amp;{NEW_USER_DATA}</var>
+<arg>nome=teste</arg>
+<arg>email=${email}</arg>
+<arg>password=teste</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-03-08T17:26:15.877211" elapsed="0.000217"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-08T17:26:15.877779" level="INFO">Creating Session using : alias=serverest_api, url=https://serverest.dev/usuarios, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>serverest_api</arg>
+<arg>${ENDPOINT_NEW_USER}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-08T17:26:15.877564" elapsed="0.000361"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2025-03-08T17:26:16.230690" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '95', 'Content-Type': 'application/json'} 
+ body=b'{"nome": "teste", "email": "testeqa78786@qa.com", "password": "teste", "administrador": "true"}' 
+ </msg>
+<msg time="2025-03-08T17:26:16.230817" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '4e9575611440614bc71848f9d51b21b6', 'Date': 'Sat, 08 Mar 2025 20:26:13 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "4yh5PMOFCQPryp6w"
+} 
+ </msg>
+<msg time="2025-03-08T17:26:16.230958" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>${ENDPOINT_NEW_USER}</arg>
+<arg>json=${NEW_USER_DATA}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2025-03-08T17:26:15.878121" elapsed="0.352875"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.231276" elapsed="0.000254"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-08T17:26:16.232144" level="INFO">{'message': 'Cadastro realizado com sucesso', '_id': '4yh5PMOFCQPryp6w'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.231683" elapsed="0.000503"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:15.876019" elapsed="0.356323"/>
+</test>
+<test id="s1-s3-t2" name="Test API Login - code 200" line="25">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-08T17:26:16.233157" level="INFO">Creating Session using : alias=serverest_api, url=https://serverest.dev/login, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>serverest_api</arg>
+<arg>${ENDPOINT_LOGIN}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-08T17:26:16.233037" elapsed="0.000252"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2025-03-08T17:26:16.581523" level="INFO">POST Request : url=https://serverest.dev/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
+ body=b'{"email": "fulano@qa.com", "password": "teste"}' 
+ </msg>
+<msg time="2025-03-08T17:26:16.581679" level="INFO">POST Response : url=https://serverest.dev/login 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '778aa85e32201f5a040929ca7e693aa5', 'Date': 'Sat, 08 Mar 2025 20:26:14 GMT', 'Server': 'Google Frontend', 'Content-Length': '265'} 
+ body={
+    "message": "Login realizado com sucesso",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQxNDY1NTc0LCJleHAiOjE3NDE0NjYxNzR9.STlsdFFo6Po8y1B0ARpub5GrZSZ-Vz-snLwC2Qqw-I4"
+} 
+ </msg>
+<msg time="2025-03-08T17:26:16.582397" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>${ENDPOINT_LOGIN}</arg>
+<arg>json=${LOGIN_DATA}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.233447" elapsed="0.349022"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${RESPONSE}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.582979" elapsed="0.000369"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-08T17:26:16.584161" level="INFO">{'message': 'Login realizado com sucesso', 'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzQxNDY1NTc0LCJleHAiOjE3NDE0NjYxNzR9.STlsdFFo6Po8y1B0ARpub5GrZSZ-Vz-snLwC2Qqw-I4'}</msg>
+<arg>${RESPONSE.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.583622" elapsed="0.000603"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:16.232755" elapsed="0.351706"/>
+</test>
+<test id="s1-s3-t3" name="Test API Get Products - code 200" line="31">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-08T17:26:16.585923" level="INFO">Creating Session using : alias=serverest_api, url=https://serverest.dev/produtos, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>serverest_api</arg>
+<arg>${ENDPOINT_PRODUTOS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-08T17:26:16.585735" elapsed="0.000363"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-03-08T17:26:16.956154" level="INFO">GET Request : url=https://serverest.dev/produtos 
+ path_url=/produtos 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-03-08T17:26:16.956262" level="INFO">GET Response : url=https://serverest.dev/produtos 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '7f80a5079ee37421f824080c2aa44da2;o=1', 'Date': 'Sat, 08 Mar 2025 20:26:14 GMT', 'Server': 'Google Frontend', 'Content-Length': '1696'} 
+ body={
+    "quantidade": 8,
+    "produtos": [
+        {
+            "nome": "Logitech MX Vertical",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 379,
+            "_id": "BeeJh5lz3k6kSIzA"
+        },
+        {
+            "nome": "Sofa",
+            "preco": 50,
+            "descricao": "Eletrodomestico",
+            "quantidade": 1,
+            "_id": "Gc2aJpcpuIwe1W5D"
+        },
+        {
+            "nome": "Samsung 60 polegadas",
+            "preco": 5240,
+            "descricao": "TV",
+            "quantidade": 49968,
+            "_id": "K6leHdftCeOJj8BJ"
+        },
+        {
+            "nome": "Mesa",
+            "preco": 200,
+            "descricao": "Casa",
+            "quantidade": 2,
+            "_id": "YHZqOlq5euLL2ijf"
+        },
+        {
+            "nome": "product0.41488276348547526",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381,
+            "_id": "ZWx5mdRtDffuDQUF"
+        },
+        {
+            "nome": "Talher cor de preta",
+            "preco": 200,
+            "descricao": "Cozinha",
+            "quantidade": 30,
+            "_id": "jykrc3mLBlsW5xfX"
+        },
+        {
+            "nome": "Handcrafted Wooden Shirt",
+            "descricao": "New silver Fish with ergonomic design for flickering comfort",
+            "preco": 186,
+            "quantidade": 97,
+            "_id": "l7bSlXkFtl6xSDQX"
+        },
+        {
+            "nome": "Tasty Rubber Car",
+            "descricao": "New Soap model with 5 GB RAM, 33 GB storage, and quick-witted features",
+            "preco": 388,
+            "quantidade": 206,
+            "_id": "ySNH0mq9Nik9tHv8"
+        }
+    ]
+} 
+ </msg>
+<msg time="2025-03-08T17:26:16.956384" level="INFO">C:\Users\Marquez\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-03-08T17:26:16.956727" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>serverest_api</arg>
+<arg>${ENDPOINT_PRODUTOS}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.586277" elapsed="0.370484"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.957005" elapsed="0.000207"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-08T17:26:16.957852" level="INFO">{'quantidade': 8, 'produtos': [{'nome': 'Logitech MX Vertical', 'preco': 470, 'descricao': 'Mouse', 'quantidade': 379, '_id': 'BeeJh5lz3k6kSIzA'}, {'nome': 'Sofa', 'preco': 50, 'descricao': 'Eletrodomestico', 'quantidade': 1, '_id': 'Gc2aJpcpuIwe1W5D'}, {'nome': 'Samsung 60 polegadas', 'preco': 5240, 'descricao': 'TV', 'quantidade': 49968, '_id': 'K6leHdftCeOJj8BJ'}, {'nome': 'Mesa', 'preco': 200, 'descricao': 'Casa', 'quantidade': 2, '_id': 'YHZqOlq5euLL2ijf'}, {'nome': 'product0.41488276348547526', 'preco': 470, 'descricao': 'Mouse', 'quantidade': 381, '_id': 'ZWx5mdRtDffuDQUF'}, {'nome': 'Talher cor de preta', 'preco': 200, 'descricao': 'Cozinha', 'quantidade': 30, '_id': 'jykrc3mLBlsW5xfX'}, {'nome': 'Handcrafted Wooden Shirt', 'descricao': 'New silver Fish with ergonomic design for flickering comfort', 'preco': 186, 'quantidade': 97, '_id': 'l7bSlXkFtl6xSDQX'}, {'nome': 'Tasty Rubber Car', 'descricao': 'New Soap model with 5 GB RAM, 33 GB storage, and quick-witted features', 'preco': 388, 'quantidade': 206, '_id': 'ySNH0mq9Nik9tHv8'}]}</msg>
+<arg>${RESPONSE.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-08T17:26:16.957427" elapsed="0.000464"/>
+</kw>
+<status status="PASS" start="2025-03-08T17:26:16.585081" elapsed="0.372964"/>
+</test>
+<status status="PASS" start="2025-03-08T17:26:15.598594" elapsed="1.359831"/>
+</suite>
+<status status="PASS" start="2025-03-08T17:25:10.607166" elapsed="66.351873"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="StorePage-Serverest &amp; LoginPage-Serverest &amp; Api-testing-products" id="s1" pass="9" fail="0" skip="0">StorePage-Serverest &amp; LoginPage-Serverest &amp; Api-testing-products</stat>
+<stat name="StorePage-Serverest" id="s1-s1" pass="2" fail="0" skip="0">StorePage-Serverest &amp; LoginPage-Serverest &amp; Api-testing-products.StorePage-Serverest</stat>
+<stat name="LoginPage-Serverest" id="s1-s2" pass="4" fail="0" skip="0">StorePage-Serverest &amp; LoginPage-Serverest &amp; Api-testing-products.LoginPage-Serverest</stat>
+<stat name="Api-testing-products" id="s1-s3" pass="3" fail="0" skip="0">StorePage-Serverest &amp; LoginPage-Serverest &amp; Api-testing-products.Api-testing-products</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
